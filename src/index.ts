@@ -28,14 +28,14 @@ export type GenerateServiceProps = {
    * api 的前缀
    */
   apiPrefix?:
-    | string
-    | ((params: {
-        path: string;
-        method: string;
-        namespace: string;
-        functionName: string;
-        autoExclude?: boolean;
-      }) => string);
+  | string
+  | ((params: {
+    path: string;
+    method: string;
+    namespace: string;
+    functionName: string;
+    autoExclude?: boolean;
+  }) => string);
   /**
    * 生成的文件夹的路径
    */
@@ -49,10 +49,9 @@ export type GenerateServiceProps = {
    */
   projectName?: string;
   /**
-   * 文档登录凭证
+   * 登录凭证
    */
   authorization?: string;
-
   hook?: {
     /** change open api data after constructor */
     afterOpenApiDataInited?: (openAPIData: OpenAPIObject) => OpenAPIObject;
@@ -62,7 +61,7 @@ export type GenerateServiceProps = {
     /** 自定义类型名称 */
     customTypeName?: (data: APIDataType) => string;
     /** 自定义 options 默认值 */
-    customOptionsDefaultValue?: (data: OperationObject) =>  Record<string, any> | undefined;
+    customOptionsDefaultValue?: (data: OperationObject) => Record<string, any> | undefined;
     /** 自定义类名 */
     customClassName?: (tagName: string) => string;
 
